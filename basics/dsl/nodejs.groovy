@@ -32,7 +32,7 @@ job('EladJob example') {
     //                     // Manage Jenkins -> Configure Tools -> NodeJS Installations -> Name
     //}
     steps {
-        shell("docker build -t test:test")
+        shell("docker build -t test:test .")
     }
 }
 
