@@ -23,33 +23,33 @@ pipeline {
             }
         }
         stage('security') {
-            agent {
+            /*agent {
                 docker { image 'alpine:latest' }
-            }
+            }*/
             steps {
                 sh 'echo "this is security"'
             }
         }
         stage('Back-end') {
-            agent {
+            /*agent {
                 docker { image 'maven:3.8.1-adoptopenjdk-11' }
-            }
+            }*/
             steps {
                 sh 'mvn --version'
             }
         }
         stage('Front-end') {
-            agent {
+            /*agent {
                 docker { image 'node:16.13.1-alpine' }
-            }
+            }*/
             steps {
                 sh 'node --version'
             }
         }
         stage('Deploy') {
-            agent {
+            /*agent {
                 docker { image 'aws-cli:latest' }
-            }
+            }*/
             steps {
                 sh 's3 cp src dst'
             }
