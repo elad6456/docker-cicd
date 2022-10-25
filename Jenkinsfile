@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-              sh 'docker build --target Build'
+              echo 'docker build --target Build'
             }
         }
         stage('Test') {
