@@ -27,7 +27,7 @@ pipeline {
                 docker { image 'alpine:latest' }
             }
             steps {
-                sh 'echo this is security'
+                sh 'echo "this is security"'
             }
         }
         stage('Back-end') {
@@ -54,9 +54,9 @@ pipeline {
                 sh 's3 cp src dst'
             }
         }
-      stage ('Post') {
-        echo "clear env"
-      }
+        stage ('Post') {
+            echo "clear env"
+        }
       
     }
 }
