@@ -35,7 +35,8 @@ pipeline {
                 docker { image 'maven:3.8.1-adoptopenjdk-11' }
             }*/
             steps {
-                sh 'mvn --version'
+                /*sh 'mvn --version'*/
+                echo "sh 'mvn --version"
             }
         }
         stage('Front-end') {
@@ -43,7 +44,8 @@ pipeline {
                 docker { image 'node:16.13.1-alpine' }
             }*/
             steps {
-                sh 'node --version'
+                /*sh 'node --version'*/
+                echo "sh 'node --version'"
             }
         }
         stage('Deploy') {
@@ -51,7 +53,7 @@ pipeline {
                 docker { image 'aws-cli:latest' }
             }*/
             steps {
-                sh 's3 cp src dst'
+                echo "sh 's3 cp src dst'"
             }
         }
         stage ('Post') {
