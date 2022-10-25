@@ -37,9 +37,9 @@ pipeline {
                 sh 'DOCKER_BUILDKIT=1 docker build -t elad:latest --target deploy .'
             }
         }
-        stage('post') {
+        stage('cleanup') {
             steps {
-                sh 'DOCKER_BUILDKIT=1 docker build -t elad:latest --target post .'
+                sh 'docker system prune'
             }
         }
     }
